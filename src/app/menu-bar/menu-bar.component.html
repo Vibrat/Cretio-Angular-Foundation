@@ -1,0 +1,53 @@
+<!-- Menu bar for md size screen -->
+<nav class="menu-bar menu-bar-fixed-left d-none d-md-block d-lg-block">
+    <div class="app-menu-bar--logo">
+        <img class="img-fluid" src="{{ logo.url }}" alt="{{ logo.atl }}" />
+        <br />
+        {{ logo.name }}
+    </div>
+<ul class="menu-bar--vertical">
+  <li *ngFor="let data of datas">
+    <a routerLink="{{ data.url }}">{{ data.name }}</a>
+  </li>
+</ul>
+</nav>
+
+<!-- menu bar for mobile <= 768 px -->
+<nav class="menu-bar menu-bar-fixed-top d-md-none d-lg-none" >
+    <div class="app-menu-bar--logo">
+        <img class="img-fluid" src="{{ logo.url }}" alt="{{ logo.atl }}" />
+        <br />
+        <span class="d-none d-md-block d-lg-none">{{ logo.name }}</span>
+    </div>
+    <ul class="menu-bar-toggle--horizontal">
+        <li>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-bar--toggle" aria-controls="menu-bar--toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fas fa-bars"></span>
+            </button>
+        </li>
+    </ul>
+    <ul  id="menu-bar--toggle" class="menu-bar--horizontal collapse">
+        <li *ngFor="let data of datas">
+            <a routerLink="{{ data.url }}">{{ data.name }}</a>
+        </li>
+        <li>
+            <div><b>{{ ContactUs.text_contact }}</b></div>
+           <div>{{ ContactUs.phone }} | {{ ContactUs.email }}</div>
+        </li>
+        <li>
+            <div><b>{{ FollowUs.text_follow }}</b></div>
+            <div>{{ FollowUs.facebook }} | {{ FollowUs.instagram }} | {{ FollowUs.twitter }}</div>
+        </li>
+        <li>
+            <form class="needs-validation" novalidate="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="{{ ContactForm.email }}">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">{{ ContactForm.text_subscribe }}</button>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+</nav>
+
