@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { News, Test } from './data/news';
+import { News, Test, Api } from './data/news';
 import { ApiService } from '../api.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-
+import { HttpClient } from '@angular/common/http';
 import 'swiper';
 
 @Component({
@@ -13,23 +11,20 @@ import 'swiper';
 })
 
 export class MainContentComponent implements OnInit {
-  public news = News;
+  private api = Api;
+  public newses: News[];
   public data: Test;
 
   constructor(
-      private api: ApiService,
       private http: HttpClient,
       private apiService: ApiService
   ) { }
 
   showData() {
-        this.apiService.getApi()
-            .subscribe((data: Test) => this.data = {
-                id: data.id,
-                title: data.title,
-                userID: data.userID,
-                body: data.body
-            });
+        this.apiService.getData(this.api.projectApi)
+            .subscribe((data: Test) => this.data = data);
+      this.apiService.getData(this.api.postApi)
+          .subscribe((data: News[]) => this.newses = data);
   }
 
   ngOnInit() {

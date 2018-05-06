@@ -1,12 +1,19 @@
+export const Api = {
+    projectApi: 'api/heroes',
+    postApi: 'api/post'
+};
 
-export const News =
-    {
-    image: {id: '1', url: '../../../assets/image/url-of-image.jpg', alt: 'Alternative name'},
-    name: 'Name of post in 2018, pick right',
-    link: '/link-to-post',
-    date: '24th August 2017',
-    des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+export interface News {
+    image: {
+        id: number;
+        url: string;
+        alt: string;
     };
+    name: string;
+    link: string;
+    date: string;
+    des:  string;
+}
 
 export interface Test {
     userID: number;

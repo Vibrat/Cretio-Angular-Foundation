@@ -124,7 +124,7 @@
           <div class="col-sm-12 col-md-4 right-section">
                   <div class="square swiper-container-1">
                       <div class="swiper-wrapper">
-                          <div class="swiper-slide">
+                          <div *ngFor="let news of newses" class="swiper-slide">
                               <div class="image-container">
                                 <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
                                 <div class="screen"></div>
@@ -147,34 +147,11 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="swiper-slide">
-                              <div class="image-container">
-                                  <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
-                                  <div class="screen"></div>
-                              </div>
-                              <div class="section-text align-bottom hover">
-                                  <div class="row">
-                                      <div class="col-sm-6 col-xs-6">
-                                          <div>
-                                              <span>{{ news.name }}</span>
-                                          </div>
-                                          <div>
-                                              <span><small>{{ news.date }}</small></span>
-                                          </div>
-                                      </div>
-                                      <div class="col-sm-6 col-xs-6 d-none d-sm-block">
-                                          <div>
-                                              <span>{{ news.des }}</span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
                       </div>
                   </div>
                   <div class="square yellow-color">
                       <div class="section-text">
-                        {{ data.title }}
+                        {{ data.name }}
                       </div>
                   </div>
           </div>
