@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import {ApiService} from './api.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SwiperModule,
     HttpClientModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
