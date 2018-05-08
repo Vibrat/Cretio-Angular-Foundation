@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
+import { AfterContentInit ,AfterViewInit, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 
@@ -16,6 +16,7 @@ export class MainContentComponent implements OnInit, AfterViewInit {
     public allNews: News[];
     public data: Test;
     public swiperContainers = SwiperContainer;
+    private calculator = 1;
 
     constructor(
         private http: HttpClient,
@@ -30,18 +31,17 @@ export class MainContentComponent implements OnInit, AfterViewInit {
     }
 
 
-    ngAfterViewInit(): void {
+    ngAfterViewInit (): void {
         setTimeout (function () {
             const swiperNews = new Swiper('.' + SwiperContainer.newsContainer);
             const swiperPort = new Swiper('.' + SwiperContainer.portfolio, {
-                slidesPerView: 1
+                slidesPerView: 1,
+                spaceBetween: 15,
+                slidesOffsetBefore: 14,
+                slidesOffsetAfter: 14,
+                width: 300
             });
         }, 500);
-    }
-
-
-    ngOnInit() {
-        this.showData();
 
         interface HTMLInputEvent extends Event {
             target: HTMLInputElement & EventTarget;
@@ -70,20 +70,23 @@ export class MainContentComponent implements OnInit, AfterViewInit {
 
         const containers = Array.from(document.querySelectorAll('.swiper-wrapper .swiper-slide .container'));
 
-        let calulator = 1;
-
         containers.forEach((container, inx_co) => {
             titles = Array.from(container.querySelectorAll('.title'));
             titles.forEach((title, index) => {
                 Array.from(title.querySelectorAll('span')).forEach((item , inx) => {
-                    item.style.animationDelay = 4 * calulator + 's';
+                    item.style.animationDelay = 4 * this.calculator + 's';
                 });
-                ++calulator;
+                ++this.calculator;
             });
 
             setTimeout(function () {
                 swiper.slideNext();
-            }, calulator * 4000);
+            }, this.calculator * 4000);
         });
+    }
+
+
+    ngOnInit() {
+        this.showData();
     }
 }

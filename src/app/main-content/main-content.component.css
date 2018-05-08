@@ -29,6 +29,10 @@
     padding-bottom: 15px;
 }
 
+.square {
+    overflow: hidden;
+}
+
 .square:hover .hover {
     opacity: 1;
 }
@@ -89,6 +93,23 @@
     min-height: 100%;
 }
 
+/* Portfolio section */
+
+.header-portfolio {
+    font-size: 14px;
+    position: relative;
+    margin: 5px auto 11px auto;
+}
+
+.swiper-wrapper.custom {
+    height: 205px;
+}
+
+.swiper-wrapper.custom .swiper-slide {
+    overflow: hidden;
+
+}
+
 @media screen and (max-width: 767px) {
     .app-container {
         padding-left: 0;
@@ -106,6 +127,38 @@
     }
 }
 
+/* box hover effect */
+
+.box-effect {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.67);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box-effect::after {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box-effect:hover {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+}
+
+.box-effect:hover::after {
+    opacity: 1;
+}
 
 /* text animation effects */
 .word {
