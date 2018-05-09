@@ -74,14 +74,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        data-target="#xs-components-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        id="xs-components-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -99,14 +99,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        data-target="#xs-injectables-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        id="xs-injectables-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
                                     >
                                         <li class="link">
                                             <a href="injectables/ApiService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>ApiService</a>
@@ -277,14 +277,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        data-target="#components-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        id="components-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -302,14 +302,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        data-target="#injectables-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-6170e1ed-09a0-4c21-b1af-bec99f92c510"
+                                        id="injectables-links-module-AppModule-11a8a0f5-1a08-4243-b090-53369c6f03c6"
 >
                                         <li class="link">
                                             <a href="injectables/ApiService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>ApiService</a>
@@ -680,9 +680,11 @@ import {ApiService} from &#x27;./api.service&#x27;;
     AppRoutingModule,
     SwiperModule,
     HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
+    /**
+     * The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+     * and returns simulated server responses.
+     * Remove it when a real server is ready to receive requests.
+     */
     HttpClientInMemoryWebApiModule.forRoot(
           InMemoryDataService, { dataEncapsulation: false }
     )

@@ -1,3 +1,4 @@
+
 import { AfterViewInit, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
@@ -12,6 +13,17 @@ import 'swiper';
 })
 
 export class MainContentComponent implements OnInit, AfterViewInit {
+
+    /**
+    * @param {string} calculator  The target to process
+    * @returns The processed target number
+    */
+
+    /**
+     * calculator  The target to process
+     * The processed target number
+     */
+
     private api = Api;
     public allNews: News[];
     public data: Test;
