@@ -25,5 +25,6 @@ export interface Test {
 export const SwiperContainer = {
     mainContainer: 'swiper-container',
     newsContainer: 'swiper-container-news',
-    portfolio:  'swiper-container-port'
+    portfolio:  'swiper-container-port',
+    logos: 'swiper-container-logos'
 };

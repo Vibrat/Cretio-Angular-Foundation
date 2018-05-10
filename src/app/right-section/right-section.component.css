@@ -1,0 +1,176 @@
+
+/* Portfolio section */
+
+.header-portfolio {
+    font-size: 14px;
+    position: relative;
+    margin: 5px auto 11px auto;
+}
+
+.swiper-wrapper.custom {
+    height: 205px;
+}
+
+.swiper-wrapper.custom .swiper-slide {
+    overflow: hidden;
+
+}
+
+@media screen and (max-width: 767px) {
+    .app-container {
+        padding-left: 0;
+        position: relative;
+        margin-top: 51px;
+        width: 100vw;
+    }
+
+    .app-container .section > .main-section {
+        height: 430px;
+    }
+
+    .app-container .section > .below-supportive, .square.subscribe {
+        height: auto;
+    }
+
+    .hover {
+        opacity: 1;
+    }
+}
+
+/* box hover effect */
+
+.box-effect {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box-effect::after {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box-effect:hover {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+}
+
+.box-effect:hover::after {
+    opacity: 1;
+}
+
+/* text animation effects */
+.word {
+    font-family: 'Anton', sans-serif;
+    perspective: 1000px;
+    perspective-origin: 200px 40px;
+}
+
+.word span {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    user-select: none;
+}
+
+.word span:nth-child(1).active {
+    animation: balance 1.5s ease-out;
+    transform-origin: 0% 100% 0px;
+}
+
+@keyframes balance {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    30%, 60% {
+        transform: rotate(-45deg);
+    }
+}
+
+.word span:nth-child(2).active {
+    animation: shrinkjump 1s ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes shrinkjump {
+    10%, 35% {
+        transform: scale(2, .2) translate(0, 0);
+    }
+
+    45%, 50% {
+        transform: scale(1) translate(0, -150px);
+    }
+
+    80% {
+        transform: scale(1) translate(0, 0);
+    }
+}
+
+.word span:nth-child(3).active {
+    animation: falling 2s ease-out;
+    transform-origin: bottom center;
+}
+
+@keyframes falling {
+    12% {
+        transform: rotateX(240deg);
+    }
+
+    24% {
+        transform: rotateX(150deg);
+    }
+
+    36% {
+        transform: rotateX(200deg);
+    }
+
+    48% {
+        transform: rotateX(175deg);
+    }
+
+    60%, 85% {
+        transform: rotateX(180deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.word span:nth-child(4).active {
+    animation: rotate 1s ease-out;
+}
+
+@keyframes rotate {
+    20%, 80% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.word span:nth-child(5).active {
+    animation: toplong 1.5s linear;
+}
+
+@keyframes toplong {
+    10%, 40% {
+        transform: translateY(-48vh) scaleY(1);
+    }
+
+    90% {
+        transform: translateY(-48vh) scaleY(4);
+    }
+}

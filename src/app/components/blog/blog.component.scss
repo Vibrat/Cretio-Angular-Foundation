@@ -1,0 +1,80 @@
+.blue-color {
+  background-color: #5aa8fb;
+  color: white;
+}
+
+.yellow-color {
+  background-color: #FFD64E;
+  color: #212529;
+}
+
+.section-text {
+  padding: 15px;
+}
+
+.square {
+  overflow: hidden;
+}
+
+.square:hover .hover {
+  opacity: 1;
+}
+
+.hover {
+  opacity: 0;
+  transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+}
+
+.section-text.align-bottom {
+  margin-bottom: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255,255,255, 0.67);
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+.right-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.square {
+  height: 250px;
+  width: 100%;
+  position: relative;
+}
+
+.square.subscribe {
+  height: calc(100vh - 500px);
+}
+
+.square .swiper-wrapper {
+  z-index: 0;
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.image-container .screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.27);
+}
+
+.image-container img {
+  min-height: 100%;
+}

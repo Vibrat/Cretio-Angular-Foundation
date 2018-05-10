@@ -1,0 +1,27 @@
+<div class="square {{ swiperContainers.newsContainer }}">
+  <div class="swiper-wrapper">
+    <div *ngFor="let news of allNews" class="swiper-slide">
+      <div class="image-container">
+        <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
+        <div class="screen"></div>
+      </div>
+      <div class="section-text align-bottom hover">
+        <div class="row">
+          <div class="col-sm-6 col-xs-6">
+            <div>
+              <span>{{ news.name }}</span>
+            </div>
+            <div>
+              <span><small>{{ news.date }}</small></span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-6 d-none d-sm-block">
+            <div>
+              <span>{{ news.des }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

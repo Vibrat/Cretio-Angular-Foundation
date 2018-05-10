@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactForm, FollowUs, ContactUs } from './data/contact-form';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,11 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ContactFormComponent implements OnInit {
-  DatasForm = {
-      name: 'Họ và tên',
-      email: 'Email',
-      comment: 'Comment'
-  };
+  contactForm = ContactForm;
+  followUs = FollowUs;
+  contactUs = ContactUs;
 
   constructor() { }
 
