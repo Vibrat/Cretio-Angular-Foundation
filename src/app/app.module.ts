@@ -7,13 +7,17 @@ import { SwiperModule } from 'angular2-useful-swiper';
 
 
 import { AppComponent } from './app.component';
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { MainContentComponent } from './main-content/main-content.component';
-import  { RightSectionComponent } from './right-section/right-section.component';
+import { RightSectionComponent } from './right-section/right-section.component';
 
 import { ApiService } from './api.service';
+import { BlogComponent } from './components/blog/blog.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { MainWelcomeComponent } from './components/main-welcome/main-welcome.component';
+import { LogosComponent } from './components/logos/logos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ApiService } from './api.service';
     MenuBarComponent,
     ContactFormComponent,
     MainContentComponent,
-    RightSectionComponent
+    RightSectionComponent,
+    BlogComponent,
+    PortfolioComponent,
+    MainWelcomeComponent,
+    LogosComponent
   ],
   imports: [
     BrowserModule,

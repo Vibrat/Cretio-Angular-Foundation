@@ -1,0 +1,32 @@
+/* Portfolio section */
+.square {
+  height: 250px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-portfolio {
+  font-size: 14px;
+  position: relative;
+  margin: 5px auto 11px auto;
+}
+
+.swiper-wrapper.custom {
+  height: 205px;
+}
+
+.swiper-wrapper.custom .swiper-slide {
+  overflow: hidden;
+  width: 240px;
+}
+
+.blue-color {
+  background-color: #5aa8fb;
+  color: white;
+}
+
+.yellow-color {
+  background-color: #FFD64E;
+  color: #212529;
+}

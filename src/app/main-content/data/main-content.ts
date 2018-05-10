@@ -3,7 +3,7 @@ export const Api = {
     postApi: 'api/post'
 };
 
-export interface News {
+export interface MainContent {
     image: {
         id: number;
         url: string;

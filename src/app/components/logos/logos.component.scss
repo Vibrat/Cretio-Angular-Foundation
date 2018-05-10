@@ -1,0 +1,65 @@
+
+.below-supportive {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.05);
+  height: calc(100vh - 500px);
+}
+
+.blue-color {
+  background-color: #5aa8fb;
+  color: white;
+}
+
+.yellow-color {
+  background-color: #FFD64E;
+  color: #212529;
+}
+
+.section-text {
+  padding: 15px;
+}
+
+.square {
+  overflow: hidden;
+}
+
+.square:hover .hover {
+  opacity: 1;
+}
+
+.hover {
+  opacity: 0;
+  transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+}
+
+.section-text.align-bottom {
+  margin-bottom: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255,255,255, 0.67);
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .below-supportive {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.05);
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-height: 627px) {
+  .below-supportive {
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.05);
+    height: auto;
+  }
+}
