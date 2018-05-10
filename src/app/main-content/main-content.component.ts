@@ -1,4 +1,3 @@
-
 import { AfterViewInit, Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
@@ -9,7 +8,7 @@ import 'swiper';
 @Component({
     selector: 'app-main-content',
     templateUrl: './main-content.component.html',
-    styleUrls: ['./main-content.component.css'],
+    styleUrls: ['./main-content.component.scss'],
 })
 
 export class MainContentComponent implements OnInit, AfterViewInit {
@@ -41,6 +40,13 @@ export class MainContentComponent implements OnInit, AfterViewInit {
                 slidesOffsetBefore: 14,
                 slidesOffsetAfter: 14,
                 width: 300
+            });
+            const swiperLogos = new Swiper('.' + SwiperContainer.logos, {
+                slidesPerView: 1,
+                spaceBetween: 25,
+                slidesOffsetBefore: 14,
+                slidesOffsetAfter: 14,
+                width: 120
             });
         }, 500);
 

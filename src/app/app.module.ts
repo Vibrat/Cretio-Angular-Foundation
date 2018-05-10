@@ -11,15 +11,17 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import  { RightSectionComponent } from './right-section/right-section.component';
 
-import {ApiService} from './api.service';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     ContactFormComponent,
-    MainContentComponent
+    MainContentComponent,
+    RightSectionComponent
   ],
   imports: [
     BrowserModule,

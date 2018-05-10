@@ -1,0 +1,14 @@
+.contact-section {
+    list-style: none;
+    padding: 5px 14px 5px 14px;
+}
+
+.needs-validation {
+    padding: 10px 0 10px 0;
+}
+
+.direct-contact > span {
+    display: inline-block;
+    padding: 3px 0 3px 0;
+    font-size: 80%;
+}

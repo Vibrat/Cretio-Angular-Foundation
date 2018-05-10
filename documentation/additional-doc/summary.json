@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Introduction",
+        "file": "introduction.md"
+    },
+    {
+        "title": "Sass & scss",
+        "file": "actions.md",
+        "children": [
+            {
+                "title": "How to begin",
+                "file": "actions/creation.md"
+            },
+            {
+                "title": "Edition of a todo",
+                "file": "actions/edition.md"
+            },
+            {
+                "title": "Delete a todo",
+                "file": "actions/delete.md"
+            },
+            {
+                "title": "Update the status of a todo",
+                "file": "actions/status.md"
+            }
+        ]
+    }
+]

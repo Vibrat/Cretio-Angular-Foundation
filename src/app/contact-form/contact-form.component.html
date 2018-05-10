@@ -1,3 +1,21 @@
-<p>
-  contact-form works!
-</p>
+<ul class="contact-section">
+  <li>
+    <div><small><a href="{{ followUs.facebook }}">Facebook</a> / <a href="{{ followUs.instagram }}">Instagram</a> </small></div>
+  </li>
+  <li>
+    <form class="needs-validation" novalidate="">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="{{ contactForm.email }}">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-secondary">{{ contactForm.text_subscribe }}</button>
+        </div>
+      </div>
+    </form>
+  </li>
+  <li>
+    <div><b>{{ contactUs.text_contact }}</b></div>
+  </li>
+  <li class="direct-contact">
+    <span>{{ contactUs.phone }} | {{ contactUs.email }} <br /> 100/4 Nguyen Dinh Chieu, Da Kao, District 1, HCMC</span>
+  </li>
+</ul>
