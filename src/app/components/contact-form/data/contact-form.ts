@@ -1,3 +1,8 @@
+export class Data {
+    public blogs: object;
+    constructor(public url: string, public swiperContainer: string ){}
+}
+
 export const ContactForm =  {
     name: 'mebu-bar-contact-form',
     email: 'you@gmail.com',

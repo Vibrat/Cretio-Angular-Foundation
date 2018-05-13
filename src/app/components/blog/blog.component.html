@@ -1,23 +1,20 @@
-<div class="square {{ swiperContainers.newsContainer }}">
+<div appLoadSwiper class="square {{ data.swiperContainer }}">
   <div class="swiper-wrapper">
-    <div *ngFor="let news of allNews" class="swiper-slide">
+    <div *ngFor="let news of data.blogs" class="swiper-slide">
       <div class="image-container">
         <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
         <div class="screen"></div>
       </div>
       <div class="section-text align-bottom hover">
         <div class="row">
-          <div class="col-sm-6 col-xs-6">
-            <div>
-              <span>{{ news.name }}</span>
-            </div>
-            <div>
-              <span><small>{{ news.date }}</small></span>
+          <div class="col-sm-12 col-xs-6">
+            <div class="title">
+              <span>{{ news.title }}</span>
             </div>
           </div>
-          <div class="col-sm-6 col-xs-6 d-none d-sm-block">
-            <div>
-              <span>{{ news.des }}</span>
+          <div class="col-sm-12 col-xs-6">
+            <div class="additional">
+              <span><span class="category">{{ news.category }}</span> / {{ news.date }}</span>
             </div>
           </div>
         </div>

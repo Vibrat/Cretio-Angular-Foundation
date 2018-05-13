@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm, FollowUs, ContactUs } from './data/contact-form';
+import { ContactForm, FollowUs, ContactUs, Data} from './data/contact-form';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -8,11 +9,15 @@ import { ContactForm, FollowUs, ContactUs } from './data/contact-form';
 })
 
 export class ContactFormComponent implements OnInit {
+
+  data = new Data('https://hilapy-be.herokuapp.com/contacts')
   contactForm = ContactForm;
   followUs = FollowUs;
   contactUs = ContactUs;
 
-  constructor() { }
+  constructor(
+      private api: ApiService
+  ) { }
 
   ngOnInit() {
   }

@@ -1,19 +1,26 @@
-export interface Blogs {
-    image: {
-        id: number;
-        url: string;
-        alt: string;
-    };
-    name: string;
-    link: string;
-    date: string;
-    des:  string;
+export class Data {
+    public blogs: object;
+    constructor(public url: string, public swiperContainer: string ){}
 }
 
-export const Api = {
-    postApi: 'api/post'
-};
-
-export const SwiperContainer = {
-    newsContainer: 'swiper-container-news',
-};
+export interface Blogs {
+    image: {
+        url: string;
+        alt: string;
+        width: number;
+        height: number;
+    };
+    meta: {
+        votes: number;
+        favs: number;
+    };
+    _id: string;
+    title: string;
+    author: string;
+    content: string;
+    seo: string;
+    hidden: boolean;
+    date: string;
+    comments: object;
+    __v: number;
+}

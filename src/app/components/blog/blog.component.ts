@@ -1,34 +1,30 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import { Blogs } from './data/blog';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Blogs, Data } from './data/blog';
 import { ApiService } from '../../api.service';
-import { HttpClient } from '@angular/common/http';
-import { Api, SwiperContainer } from '../../right-section/data/data';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['./blog.component.scss'],
+  providers: [ ApiService ],
 })
+
 export class BlogComponent implements OnInit, AfterViewInit {
-  public  allNews: Blogs[];
-  private api = Api;
-  public  swiperContainers = SwiperContainer;
+  public data = new Data('https://hilapy-be.herokuapp.com/posts', 'swiper-container-news');
 
   constructor(
-        private http: HttpClient,
-        private apiService: ApiService
-  ){ }
-
+        private apiService: ApiService,
+  ){}
 
   showData(): void {
-        this.apiService.getData(this.api.postApi)
-            .subscribe((data: Blogs[]) => this.allNews = data);
+        this.apiService.getData(this.data.url)
+            .subscribe((data: any) => this.data.blogs = data.data);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(data = this.data) {
       setTimeout (function () {
-          const swiperNews = new Swiper('.' + SwiperContainer.newsContainer);
-      }, 500);
+          let swiperNews = new Swiper('.' + data.swiperContainer);
+      }, 0);
   }
 
   ngOnInit() {

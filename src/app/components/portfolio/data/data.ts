@@ -1,11 +1,7 @@
-export const Api = {
-    projectApi: 'api/heroes',
-    postApi: 'api/post'
-};
-
-export const SwiperContainer = {
-    portfolio:  'swiper-container-port',
-};
+export class Data {
+    public porfolios: object;
+    constructor (public url: string, public swiperContainer: string ) {}
+}
 
 export interface Portfolio {
     image: {
