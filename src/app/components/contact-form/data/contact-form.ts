@@ -1,3 +1,8 @@
+export class Data {
+    public contact: object;
+    constructor(public url: string){}
+}
+
 export const ContactForm =  {
     name: 'mebu-bar-contact-form',
     email: 'you@gmail.com',

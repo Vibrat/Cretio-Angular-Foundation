@@ -1,8 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Blogs} from '../blog/data/blog';
 import {ApiService} from '../../api.service';
-import {HttpClient} from '@angular/common/http';
-import {Api, Portfolio, SwiperContainer} from './data/data';
+import {Data, Portfolio} from './data/data';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,25 +9,21 @@ import {Api, Portfolio, SwiperContainer} from './data/data';
 })
 
 export class PortfolioComponent implements OnInit, AfterViewInit {
-    public  porfolios: Portfolio[];
-    private api = Api;
-    public  swiperContainers = SwiperContainer;
+    public  data = new Data('api/post', 'swiper-container-port');
 
     constructor(
-        private http: HttpClient,
         private apiService: ApiService
     ){ }
 
-
     showData(): void {
-        this.apiService.getData(this.api.postApi)
-            .subscribe((data: Portfolio[]) => this.porfolios = data);
+        this.apiService.getData(this.data.url)
+            .subscribe((data: Portfolio[]) => this.data.porfolios = data);
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(data = this.data) {
         setTimeout (function () {
-            const portfolios = new Swiper('.' + SwiperContainer.portfolio);
-        }, 500);
+            let porfolios = new Swiper('.' + data.swiperContainer);
+        }, 0);
     }
 
     ngOnInit() {

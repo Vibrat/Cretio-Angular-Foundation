@@ -9,27 +9,32 @@ export class InMemoryDataService implements InMemoryDbService {
               link: '/link-to-post',
               date: '24th August 2017',
               des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+              category: 'News'
             },
             {   image: {id: '1', url: '../../../assets/image/url-of-image.jpg', alt: 'Alternative name'},
                 name: 'Name of post in 2018, pick right',
                 link: '/link-to-post',
                 date: '24th August 2017',
                 des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+                category: 'Promotion'
             }, {   image: {id: '1', url: '../../../assets/image/url-of-image.jpg', alt: 'Alternative name'},
                 name: 'Name of post in 2018, pick right',
                 link: '/link-to-post',
                 date: '24th August 2017',
                 des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+                category: 'Promotion'
             }, {   image: {id: '1', url: '../../../assets/image/url-of-image.jpg', alt: 'Alternative name'},
                 name: 'Name of post in 2018, pick right',
                 link: '/link-to-post',
                 date: '24th August 2017',
                 des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+                category: 'Promotion'
             }, {   image: {id: '1', url: '../../../assets/image/url-of-image.jpg', alt: 'Alternative name'},
                 name: 'Name of post in 2018, pick right',
                 link: '/link-to-post',
                 date: '24th August 2017',
                 des:  'Small descrption asdkjqw kasjdhiq kasdjiqywi akd 9q kadjqi ',
+                category: 'Promotion'
             }, ];
         return {heroes, post};
     }

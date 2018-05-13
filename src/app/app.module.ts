@@ -13,7 +13,6 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { MainContentComponent } from './main-content/main-content.component';
 import { RightSectionComponent } from './right-section/right-section.component';
 
-import { ApiService } from './api.service';
 import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { MainWelcomeComponent } from './components/main-welcome/main-welcome.component';
@@ -29,7 +28,7 @@ import { LogosComponent } from './components/logos/logos.component';
     BlogComponent,
     PortfolioComponent,
     MainWelcomeComponent,
-    LogosComponent
+    LogosComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,13 +40,13 @@ import { LogosComponent } from './components/logos/logos.component';
      * and returns simulated server responses.
      * Remove it when a real server is ready to receive requests.
      */
+    /*
     HttpClientInMemoryWebApiModule.forRoot(
           InMemoryDataService, { dataEncapsulation: false }
     )
+    */
   ],
-  providers: [
-      ApiService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 
