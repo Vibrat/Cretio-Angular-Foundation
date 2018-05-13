@@ -1,6 +1,6 @@
 export class Data {
-    public blogs: object;
-    constructor(public url: string, public swiperContainer: string ){}
+    public contact: object;
+    constructor(public url: string){}
 }
 
 export const ContactForm =  {

@@ -5,10 +5,12 @@
   <li>
     <form class="needs-validation" novalidate="">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="{{ contactForm.email }}">
+        <input type="text" class="form-control is-invalid" placeholder="{{ contactForm.email }}">
         <div class="input-group-append">
           <button type="submit" class="btn btn-secondary">{{ contactForm.text_subscribe }}</button>
         </div>
+        <div class="valid-feedback">Example invalid feedback text</div>
+        <div class="invalid-feedback">Example invalid feedback text</div>
       </div>
     </form>
   </li>

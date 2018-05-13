@@ -9,8 +9,7 @@ import { ApiService } from '../../api.service';
 })
 
 export class ContactFormComponent implements OnInit {
-
-  data = new Data('https://hilapy-be.herokuapp.com/contacts')
+  data = new Data('https://hilapy-be.herokuapp.com/contacts');
   contactForm = ContactForm;
   followUs = FollowUs;
   contactUs = ContactUs;
@@ -20,6 +19,7 @@ export class ContactFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.api.getData(this.data.url).subscribe((data: any) => this.data.contact = data.data);
   }
 
 }
