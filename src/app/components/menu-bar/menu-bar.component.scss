@@ -1,0 +1,180 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.menu-bar {
+    background-color: $white-smoke;
+    width: 100px;
+    z-index: 1;
+}
+
+/* Rendering menu when in mobile */
+@media screen and (max-width: 767px) {
+    .menu-bar {
+      background-color: $blue-sky;
+    }
+    .menu-bar.menu-bar-fixed-top {
+        top: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+    .menu-bar > div.app-menu-bar--logo {
+        top: 0;
+        text-align: center;
+        max-width: 100px;
+        display: inline-block;
+    }
+
+    .menu-bar > .menu-bar--horizontal {
+        float: left;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $blue-sky;
+    }
+
+    .menu-bar > .menu-bar--horizontal.collapse.show {
+        min-height: calc(100vh - 51.3px);
+        height: 200px;
+        overflow: scroll;
+    }
+
+    .menu-bar > .menu-bar-toggle--horizontal {
+        float: right;
+        display: inline-block;
+        list-style: none;
+        padding: 10px 3px;
+        margin: 0;
+    }
+
+    .menu-bar > .menu-bar--horizontal li {
+       list-style: none;
+       width: 100%;
+       float: left;
+       text-align: left;
+       min-height: 40px;
+       padding: 5px 0;
+    }
+
+  .menu-bar > .menu-bar--horizontal li a {
+      color: $white-smoke;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+  }
+
+  .menu-bar > .menu-bar--horizontal li a:before {
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 12px;
+    margin-right: 5px;
+    background-color: #F483A9;
+    transform: rotate(45deg);
+  }
+
+  .menu-bar > .menu-bar--horizontal li.more-space {
+    padding-top: 25px;
+  }
+
+  .menu-bar > .menu-bar--horizontal li.contact, .menu-bar--horizontal li.follow {
+    color: $blue-dark;
+  }
+
+  .menu-bar > .menu-bar--horizontal li.contact h4, .menu-bar > .menu-bar--horizontal li.follow h4 {
+    color: $skin-color;
+    letter-spacing: 3px;
+  }
+
+  .menu-bar > .menu-bar--horizontal li.contact h4:before,  .menu-bar > .menu-bar--horizontal li.follow h4:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 12px;
+    margin-right: 6px;
+    background-color: #9FF78F;
+    transform: rotate(-45deg);
+  }
+
+  /* Modify form-input */
+
+  button.btn.btn-secondary {
+    background-color: $blue-dark;
+    border-bottom-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    font-family: 'Baloo Paaji', cursive;
+    letter-spacing: 2px;
+    color: $white-smoke;
+    border: none;
+  }
+
+  input.form-control {
+    background-color: $white-smoke;
+    opacity: 0.85;
+  }
+}
+
+.menu-bar > div.app-menu-bar--logo {
+    top: 0;
+    text-align: center;
+}
+
+.menu-bar > div.app-menu-bar--logo > img {
+    padding: 10px 3px;
+}
+
+.menu-bar.menu-bar-fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: table-cell;
+    height: 100%;
+}
+
+.menu-bar > .menu-bar--vertical {
+    width: 100%;
+    padding-left: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.menu-bar > .menu-bar--vertical li {
+    list-style: none;
+}
+
+.menu-bar > .menu-bar--vertical li a {
+    background-color: $yellow-light;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+    color: $dark-bold;
+    width: 24px;
+}
+
+.menu-bar > .menu-bar--vertical li a:hover {
+    background-color: $yellow-light;
+    width: 100%;
+    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-bar > .menu-bar--vertical li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Rotation for navtoggler */
+
+.navRotation {
+  transform: rotate(135deg);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar-toggler:active, .navbar-toggler:focus, .navbar-toggler:focus-within {
+  border: none;
+  outline: none;
+}

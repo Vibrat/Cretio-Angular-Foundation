@@ -1,5 +1,6 @@
 export class Data {
     public porfolios: object;
+    public meta: object;
     constructor (public url: string, public swiperContainer: string ) {}
 }
 

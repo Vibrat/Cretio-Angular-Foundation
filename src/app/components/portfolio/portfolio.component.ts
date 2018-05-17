@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChildren, QueryList} from '@angular/core';
 import {ApiService} from '../../api.service';
 import {Data, Portfolio} from './data/data';
 
@@ -9,7 +9,9 @@ import {Data, Portfolio} from './data/data';
 })
 
 export class PortfolioComponent implements OnInit, AfterViewInit {
-    public  data = new Data('api/post', 'swiper-container-port');
+    public  data = new Data('https://hilapy-be.herokuapp.com/posts', 'swiper-container-port');
+
+    @ViewChildren('watching') things: QueryList<any>;
 
     constructor(
         private apiService: ApiService
@@ -17,13 +19,27 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
 
     showData(): void {
         this.apiService.getData(this.data.url)
-            .subscribe((data: Portfolio[]) => this.data.porfolios = data);
+            .subscribe((data: Portfolio[]) => {
+                this.data.porfolios = data['data'];
+                this.data.meta = data['meta'];
+            });
+    }
+
+    renderedJs(): void {
+        let porfolios = new Swiper('.' + this.data.swiperContainer, {
+            slidesPerView: 1,
+            spaceBetween: 11,
+            width: 300,
+            slidesOffsetBefore: 11,
+            preloadImages: true,
+        });
+        console.log('watiching oke');
     }
 
     ngAfterViewInit(data = this.data) {
-        setTimeout (function () {
-            let porfolios = new Swiper('.' + data.swiperContainer);
-        }, 0);
+        this.things.changes.subscribe(() =>  {
+          this.renderedJs();
+        });
     }
 
     ngOnInit() {

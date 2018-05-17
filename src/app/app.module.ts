@@ -22,10 +22,10 @@ import { LogosComponent } from './components/logos/logos.component';
   declarations: [
     AppComponent,
     MenuBarComponent,
+    BlogComponent,
     ContactFormComponent,
     MainContentComponent,
     RightSectionComponent,
-    BlogComponent,
     PortfolioComponent,
     MainWelcomeComponent,
     LogosComponent,

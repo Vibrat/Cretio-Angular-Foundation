@@ -2,19 +2,14 @@
   <div class="square {{ data.swiperContainer }}">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="header-portfolio text-center">Portfolio</h2>
+        <h2 class="header-portfolio text-center">- Portfolio -</h2>
       </div>
     </div>
     <div class="swiper-wrapper custom">
-      <div *ngFor="let news of data.porfolios" class="swiper-slide box-effect">
+      <div #watching *ngFor="let news of data.porfolios" class="swiper-slide box-effect rounded">
         <div class="image-container">
           <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
           <div class="screen"></div>
-        </div>
-      </div>
-      <div class="swiper-slide box-effect">
-        <div class="image-container">
-          <div class="screen">SEE MORE AT...</div>
         </div>
       </div>
     </div>

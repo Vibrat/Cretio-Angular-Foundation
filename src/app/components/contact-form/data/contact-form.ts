@@ -1,23 +1,32 @@
 export class Data {
     public contact: object;
-    constructor(public url: string){}
+    public media: object | Media;
+    public meta: object;
+    constructor (public url_contact: string, public url_media: string ) {}
 }
 
-export const ContactForm =  {
-    name: 'mebu-bar-contact-form',
+export class Media {
+    meta: {
+        code: number;
+    };
+    data: {
+        facebook: {
+            id: number;
+            url: string;
+            order: number
+        };
+        instagram: {
+            id: number;
+            url: string;
+            order: number
+        }
+    };
+}
+
+export const Entry = {
     email: 'you@gmail.com',
-    text_subscribe: 'Subscribe'
-};
-
-export const ContactUs = {
+    text_subscribe: 'Subscribe',
     text_contact: 'Contact us',
-    phone: '84 935 516 658',
-    email: 'lam.hipaly@gmail.com'
+    text_follow: 'Follow us'
 };
 
-export const FollowUs = {
-    text_follow: 'Follow us',
-    facebook: '/fb url',
-    instagram: '/instagram',
-    twitter:    '/twitter'
-};

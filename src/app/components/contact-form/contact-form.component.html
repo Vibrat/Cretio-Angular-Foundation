@@ -1,13 +1,17 @@
 <ul class="contact-section">
   <li>
-    <div><small><a href="{{ followUs.facebook }}">Facebook</a> / <a href="{{ followUs.instagram }}">Instagram</a> </small></div>
+    <div>
+      <a *ngIf="data.media" href="{{ data.media.data.facebook.url}}"><span class="fa fa-facebook-official"></span></a>
+        &nbsp;
+      <a *ngIf="data.media" href="/{{ data.media.data.instagram.url}}"><span class="fa fa-instagram"></span></a>
+    </div>
   </li>
   <li>
     <form class="needs-validation" novalidate="">
       <div class="input-group">
-        <input type="text" class="form-control is-invalid" placeholder="{{ contactForm.email }}">
+        <input type="text" class="form-control" placeholder="{{ text.email }}">
         <div class="input-group-append">
-          <button type="submit" class="btn btn-secondary">{{ contactForm.text_subscribe }}</button>
+          <button type="submit" class="btn btn-secondary">{{ text.text_subscribe }}</button>
         </div>
         <div class="valid-feedback">Example invalid feedback text</div>
         <div class="invalid-feedback">Example invalid feedback text</div>
@@ -15,9 +19,9 @@
     </form>
   </li>
   <li>
-    <div><b>{{ contactUs.text_contact }}</b></div>
+    <div><b>- {{ text.text_contact }} -</b></div>
   </li>
   <li class="direct-contact">
-    <span>{{ contactUs.phone }} | {{ contactUs.email }} <br /> 100/4 Nguyen Dinh Chieu, Da Kao, District 1, HCMC</span>
+    <span *ngIf="data.contact">{{ data.contact.hotline }} | {{ data.contact.email }} <br /> {{ data.contact.address }}</span>
   </li>
 </ul>

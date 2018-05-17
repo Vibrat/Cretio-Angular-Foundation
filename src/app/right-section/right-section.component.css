@@ -1,34 +1,5 @@
-
-/* Portfolio section */
-
-.header-portfolio {
-    font-size: 14px;
-    position: relative;
-    margin: 5px auto 11px auto;
-}
-
-.swiper-wrapper.custom {
-    height: 205px;
-}
-
-.swiper-wrapper.custom .swiper-slide {
-    overflow: hidden;
-
-}
-
 @media screen and (max-width: 767px) {
-    .app-container {
-        padding-left: 0;
-        position: relative;
-        margin-top: 51px;
-        width: 100vw;
-    }
-
-    .app-container .section > .main-section {
-        height: 430px;
-    }
-
-    .app-container .section > .below-supportive, .square.subscribe {
+    .square.subscribe {
         height: auto;
     }
 

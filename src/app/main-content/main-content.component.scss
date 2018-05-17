@@ -83,6 +83,19 @@
     }
 }
 
+@media screen and (width: 768px) {
+  .col-md-4, .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  .col-md-4, .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
 /* text animation effects */
 .word {
     font-family: 'Anton', sans-serif;

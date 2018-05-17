@@ -3,7 +3,7 @@
     <div class="app-menu-bar--logo">
         <img class="img-fluid" src="{{ logo.url }}" alt="{{ logo.atl }}" />
         <br />
-        {{ logo.name }}
+        <!-- {{ logo.name }} -->
     </div>
 <ul class="menu-bar--vertical">
   <li *ngFor="let data of datas">
@@ -22,7 +22,7 @@
     <ul class="menu-bar-toggle--horizontal">
         <li>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-bar--toggle" aria-controls="menu-bar--toggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fas fa-bars"></span>
+                    <span data-toggle="collapse" data-target="#menu-bar--toggle" aria-controls="menu-bar--toggle" aria-expanded="false" aria-label="Toggle navigation" class="fa fa-bars"></span>
             </button>
         </li>
     </ul>
@@ -30,18 +30,18 @@
         <li *ngFor="let data of datas">
             <a routerLink="{{ data.url }}">{{ data.name }}</a>
         </li>
-        <li>
-            <div><b>{{ ContactUs.text_contact }}</b></div>
+        <li class="contact more-space">
+            <div><h4>{{ ContactUs.text_contact }}</h4></div>
            <div>{{ ContactUs.phone }} | {{ ContactUs.email }}</div>
         </li>
-        <li>
-            <div><b>{{ FollowUs.text_follow }}</b></div>
+        <li class="follow">
+            <div><h4>{{ FollowUs.text_follow }}</h4></div>
             <div>{{ FollowUs.facebook }} | {{ FollowUs.instagram }} | {{ FollowUs.twitter }}</div>
         </li>
-        <li>
+        <li class="form">
             <form class="needs-validation" novalidate="">
                 <div class="input-group">
-                    <input type="text" class="form-control is-invalid" placeholder="{{ ContactForm.email }}">
+                    <input type="email" class="form-control is-invalid" placeholder="{{ ContactForm.email }}">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">{{ ContactForm.text_subscribe }}</button>
                     </div>

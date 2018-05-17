@@ -1,3 +1,7 @@
+.container-all {
+  position: relative;
+}
+
 .blue-color {
   background-color: #5aa8fb;
   color: white;
@@ -45,6 +49,12 @@
   -webkit-transition: opacity 500ms;
 }
 
+@media screen and ( max-width: 768px ) {
+  .square .hover {
+    opacity: 1;
+  }
+}
+
 .section-text.align-bottom {
   margin-bottom: 0;
   bottom: 0;
@@ -74,6 +84,10 @@
   z-index: 0;
 }
 
+.square .swiper-wrapper .swiper-slide {
+  overflow: hidden;
+}
+
 .image-container {
   position: absolute;
   top: 0;
@@ -96,4 +110,68 @@
 
 .image-container img {
   min-height: 100%;
+  min-width: 100%;
+}
+
+.-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 24px;
+  text-align: center;
+}
+
+.-loading.-disappear {
+  display: none;
+}
+
+.boxs-effect {
+   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+   animation: loading 1.5s none;
+   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #007bff;
+    transform-origin: 50%;
+    animation: bounce 500ms alternate infinite ease;
+  }
+}
+
+@keyframes loading {
+  from { transform: scale(0.0, 0.0); }
+  to { transform: scale(1, 1); }
+}
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
 }

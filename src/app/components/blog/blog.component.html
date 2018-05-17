@@ -1,6 +1,7 @@
-<div appLoadSwiper class="square {{ data.swiperContainer }}">
+<div class="container-all">
+<div class="square {{ data.swiperContainer }}">
   <div class="swiper-wrapper">
-    <div *ngFor="let news of data.blogs" class="swiper-slide">
+    <div #watching *ngFor="let news of data.blogs" class="swiper-slide boxs-effect">
       <div class="image-container">
         <img class="img-fluid" src="{{ news.image.url }}" alt="{{ news.image.alt }}" />
         <div class="screen"></div>
@@ -14,7 +15,7 @@
           </div>
           <div class="col-sm-12 col-xs-6">
             <div class="additional">
-              <span><span class="category">{{ news.category }}</span> / {{ news.date }}</span>
+              <span><span class="category">{{ news.category }}</span> / {{ news.date | date: ' dd - MM - yyyy' }}</span>
             </div>
           </div>
         </div>
@@ -22,3 +23,8 @@
     </div>
   </div>
 </div>
+
+<!-- add a class -disappear when finish loading image -->
+<div class="-loading"> <div class="bounceball"></div></div>
+</div>
+

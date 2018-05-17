@@ -1,6 +1,6 @@
 
 export const Logo = {
-    name: 'An gia Concept' ,
+    name: 'Cretio' ,
     url: '../../../assets/image/logo.png',
     atl: 'Main Logo',
 };

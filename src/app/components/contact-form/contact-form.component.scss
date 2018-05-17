@@ -1,0 +1,62 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.contact-section {
+    list-style: none;
+    padding: 5px 14px 5px 14px;
+    margin-top: 0;
+    margin-bottom:0;
+    height: calc(100vh - 500px);
+}
+
+.needs-validation {
+    padding: 10px 0 10px 0;
+}
+
+.needs-validation .input-group {
+    position: relative;
+}
+
+.needs-validation .valid-feedback, .needs-validation .invalid-feedback {
+    position: absolute;
+    top: 33px;
+    font-size: 12px;
+}
+
+.direct-contact > span {
+    display: inline-block;
+    padding: 3px 0 3px 0;
+    font-size: 80%;
+}
+
+/* Modify form-input */
+
+button.btn.btn-secondary {
+    background-color: $blue-dark;
+    border-bottom-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    font-family: 'Baloo Paaji', cursive;
+    letter-spacing: 2px;
+    color: $white-smoke;
+    border: none;
+    z-index: 1;
+}
+
+input.form-control {
+    background-color: $white-smoke;
+    opacity: 0.85;
+}
+
+.fa {
+    color: $blue-dark;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        list-style: none;
+        padding: 5px 14px 5px 14px;
+        margin-top: 0;
+        margin-bottom:0;
+        height: auto;
+    }
+}

@@ -1,9 +1,11 @@
+@import '~sass/variables';
 
 .below-supportive {
   width: 100%;
   overflow: hidden;
   background-color: rgba(0,0,0,.05);
-  height: calc(100vh - 500px);
+  height: calc(100vh - 75vh);
+  min-height: 120px;
 }
 
 .blue-color {
@@ -42,6 +44,37 @@
   background-color: rgba(255,255,255, 0.67);
   padding-top:5px;
   padding-bottom: 5px;
+}
+
+.header-portfolio {
+  font-size: 12px;
+  font-weight: bold;
+
+}
+
+.swiper-slide {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  top: 0;
+  bottom: 0;
+  margin-top:auto;
+  margin-bottom: auto;
+  height: 162px;
+}
+
+.image-container {
+  height: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.image-container > img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 768px) {

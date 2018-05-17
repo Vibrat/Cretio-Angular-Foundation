@@ -8,7 +8,9 @@ import { SwiperContainer } from './data/logos';
 })
 export class LogosComponent implements OnInit, AfterViewInit {
   swiperContainers = SwiperContainer;
+
   constructor() { }
+
   ngAfterViewInit (): void {
     setTimeout (function () {
             const swiperLogos = new Swiper('.' + SwiperContainer.logos, {

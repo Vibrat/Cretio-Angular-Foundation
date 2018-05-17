@@ -1,6 +1,7 @@
 export class Data {
     public blogs: object;
-    constructor(public url: string, public swiperContainer: string ){}
+    public meta: object;
+    constructor( public url: string, public swiperContainer: string ){}
 }
 
 export interface Blogs {
