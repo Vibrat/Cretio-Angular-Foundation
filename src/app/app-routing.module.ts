@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { MainContentComponent } from './main-content/main-content.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-    { path: 'menu-bar', component: MenuBarComponent }
+    { path: '', component: MainContentComponent },
+    { path: 'post', loadChildren: 'app/components/posts/posts.module#PostsModule', canLoad: []  },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

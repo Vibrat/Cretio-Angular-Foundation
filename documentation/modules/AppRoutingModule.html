@@ -669,7 +669,7 @@
 
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { PostsRouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { MenuBarComponent } from &#x27;./components/menu-bar/menu-bar.component&#x27;;
 
 const routes: Routes &#x3D; [
@@ -677,8 +677,8 @@ const routes: Routes &#x3D; [
 ];
 
 @NgModule({
-  exports:  [ RouterModule ],
-  imports:  [ RouterModule.forRoot(routes)]
+  exports:  [ PostsRouterModule ],
+  imports:  [ PostsRouterModule.forRoot(routes)]
 })
 
 export class AppRoutingModule { }

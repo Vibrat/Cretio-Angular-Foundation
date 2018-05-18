@@ -17,6 +17,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { MainWelcomeComponent } from './components/main-welcome/main-welcome.component';
 import { LogosComponent } from './components/logos/logos.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LogosComponent } from './components/logos/logos.component';
     PortfolioComponent,
     MainWelcomeComponent,
     LogosComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

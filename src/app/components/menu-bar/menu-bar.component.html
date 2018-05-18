@@ -6,8 +6,8 @@
         <!-- {{ logo.name }} -->
     </div>
 <ul class="menu-bar--vertical">
-  <li *ngFor="let data of datas">
-    <a routerLink="{{ data.url }}">{{ data.name }}</a>
+  <li *ngFor="let data of datas; let last = last;">
+    <a [class.last]="last-menu" routerLink="{{ data.url }}">{{ data.name }}</a>
   </li>
 </ul>
 </nav>
@@ -27,8 +27,8 @@
         </li>
     </ul>
     <ul  id="menu-bar--toggle" class="menu-bar--horizontal collapse">
-        <li *ngFor="let data of datas">
-            <a routerLink="{{ data.url }}">{{ data.name }}</a>
+        <li *ngFor="let data of datas; let last = last;">
+            <a [class.last]="last" routerLink="{{ data.url }}">{{ data.name }}</a>
         </li>
         <li class="contact more-space">
             <div><h4>{{ ContactUs.text_contact }}</h4></div>
