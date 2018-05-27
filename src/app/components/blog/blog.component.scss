@@ -1,5 +1,10 @@
 .container-all {
   position: relative;
+  background-color: #E1E2E1;
+  -webkit-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  -moz-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  box-shadow: 0 4px 10px rgba(0,0,0,.36);
+  z-index: 1;
 }
 
 .blue-color {
@@ -53,14 +58,20 @@
   .square .hover {
     opacity: 1;
   }
+
+  .container-all {
+    padding-top: 12px;
+  }
 }
 
 .section-text.align-bottom {
   margin-bottom: 0;
   bottom: 0;
+  right: 0;
   position: absolute;
-  width: 100%;
-  background-color: rgba(255,255,255, 0.67);
+  top: 0;
+  width: 150px;
+  background-color: rgba(255,255,255, 1);
   padding-top:5px;
   padding-bottom: 5px;
 }

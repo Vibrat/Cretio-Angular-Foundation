@@ -3,9 +3,10 @@
 .below-supportive {
   width: 100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,.05);
+  background-color: #3448a4;
   height: calc(100vh - 75vh);
   min-height: 120px;
+  color: #ffffff;
 }
 
 .blue-color {
@@ -53,19 +54,24 @@
 }
 
 .swiper-slide {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   top: 0;
   bottom: 0;
   margin-top:auto;
   margin-bottom: auto;
-  height: 162px;
+  height: 148px;
+  -webkit-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
+  -moz-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
+  box-shadow: 0 -4px 10px rgba(0,0,0,.36);
 }
 
 .image-container {
-  height: 100px;
+  height: 116px;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 4px;
+  padding-left: 4px;
   position: relative;
 }
 
@@ -81,7 +87,7 @@
   .below-supportive {
     width: 100%;
     overflow: hidden;
-    background-color: rgba(0,0,0,.05);
+    background-color: #3448a4;
     height: auto;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -92,7 +98,6 @@
   .below-supportive {
     width: 100%;
     overflow: hidden;
-    background-color: rgba(0,0,0,.05);
     height: auto;
   }
 }

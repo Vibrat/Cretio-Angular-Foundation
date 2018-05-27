@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -11,7 +11,6 @@ export class PostComponent implements OnInit {
 
   constructor(
       private route: ActivatedRoute,
-      private router: Router
   ) { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SwiperContainer } from './data/logos';
 
 @Component({
@@ -7,23 +7,19 @@ import { SwiperContainer } from './data/logos';
   styleUrls: ['./logos.component.scss']
 })
 export class LogosComponent implements OnInit, AfterViewInit {
-  swiperContainers = SwiperContainer;
+  public swiperContainers = SwiperContainer;
 
   constructor() { }
 
   ngAfterViewInit (): void {
-    setTimeout (function () {
-            const swiperLogos = new Swiper('.' + SwiperContainer.logos, {
-                slidesPerView: 1,
-                spaceBetween: 25,
-                slidesOffsetBefore: 14,
-                slidesOffsetAfter: 14,
-                width: 120
-            });
-            }, 500);
+      const swiperLogos = new Swiper('.' + SwiperContainer.logos, {
+          slidesPerView: 1,
+          spaceBetween: 25,
+          slidesOffsetBefore: 14,
+          slidesOffsetAfter: 14,
+          width: 120
+      });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

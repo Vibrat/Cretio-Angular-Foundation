@@ -7,10 +7,6 @@
   position: absolute;
 }
 
-.app-container-no-padding {
-  padding: 0;
-}
-
 // Swiper posst
 
 .app-container .swiper-post {
@@ -29,17 +25,39 @@
   overflow: hidden;
 }
 
+// Content Section
+.section-text {
+  padding: 15px;
+  color: $white-smoke;
+}
+
+.title {
+  font-size: 36px;
+  font-family: 'Baloo Paaji', cursive;
+}
+
+.align-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+// Image Processing
+
 .image-container {
   width: 100%;
   height: 100%;
   background-color: $white-smoke;
 }
 
+.image-container img {
+  min-width: 100%;
+}
+
+
 .screen {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: $white-smoke;
   opacity: 0.36;
   top: 0;
 }
@@ -54,35 +72,14 @@
   100% { opacity: 0.36; }
 }
 
-
-.image-container img {
-  min-width: 100%;
-}
-
-.section-text {
-  padding: 15px;
-}
-
-.title {
-  font-size: 46px;
-  font-family: 'Baloo Paaji', cursive;
-}
-
-.align-bottom {
-  position: absolute;
-  bottom: 0;
-}
-
 .swiper-pagination {
   position: fixed;
-  text-align: right;
-  padding: 15px;
   z-index: 1;
   right: 15px;
   left: auto;
   width: auto;
-  border-right: 1px solid $dark-bold;
-  border-bottom: 1px solid $dark-bold;
+  transform-origin: 90% 50%;
+  transform: rotate(90deg);
 }
 
 .swiper-custom-next {
@@ -135,21 +132,146 @@
   content: ".";
 }
 
+
+// Feature posts section
+
+.featured-posts {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 75%;
+  background-color: $white-smoke;
+}
+
+.featured-posts .row {
+  margin-right: 0;
+  margin-left: 0;
+  -webkit-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  -moz-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  box-shadow: 0 4px 10px rgba(0,0,0,.36);
+}
+
+.featured-posts .feature-post {
+  text-align: left;
+  height: 75px;
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 0;
+  transition: height 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.featured-posts .feature-post:first-child {
+  padding-left: 10px;
+}
+
+.featured-posts:hover .feature-post {
+  height: 120px;
+  transition: height 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.featured-posts .feature-post .image-container {
+  overflow: hidden;
+}
+
+.featured-posts .feature-post .title {
+  font-weight: bold;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: $link-hover;
+}
+
+.featured-posts .feature-post .title:before {
+  content: ".";
+}
+
+
 @media screen and (max-width: 767px) {
   .app-container {
     padding-left: 0;
     position: relative;
-    margin-top: 51px;
+    padding-top: 51px;
     width: 100vw;
   }
 
   .app-container .swiper-post {
     position: relative;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 51.3px);
+  }
+
+  .swiper-slide.rounded {
+    border-radius: 0!important;
+  }
+
+  .feature-post .image-container {
+    height: 100%;
+    background-color: $white-smoke;
+    border-radius: 0 !important;
+  }
+
+  .swiper-slide .image-container .img-fluid {
+    height: calc(100vh - 155.3px);
+    margin-left: -50%;
+    min-width: 150%;
+  }
+
+  .swiper-custom-prev, .swiper-custom-next {
+    display: none;
+  }
+
+  .section-text.align-bottom {
+    padding-right: 30px;
+    color: $dark-bold;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+  }
+
+  .swiper-slide .title {
+    font-size: 15px;
+    font-family: 'Baloo Paaji', cursive;
   }
 
   .hover {
     opacity: 1;
+  }
+
+  .featured-posts {
+    position: relative;
+    width: 100%;
+    background-color: $white-smoke;
+  }
+
+  .featured-posts .feature-post {
+    padding: 0;
+    height: auto !important;
+    transition: none;
+    border-radius: 0!important;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    -webkit-box-shadow: 0 4px 14px rgba(0,0,0,.65);
+    -moz-box-shadow: 0 4px 14px rgba(0,0,0,.65);
+    box-shadow: 0 4px 10px rgba(0,0,0,.65);
+  }
+
+  .featured-posts .feature-post .title {
+    position: absolute;
+    color: $white-smoke;
+    display: table-cell;
+    vertical-align: middle;
+    opacity: 0.78;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0,0,0, 0.22);
+  }
+
+  .featured-posts .feature-post:first-child {
+    padding: 0;
   }
 }

@@ -30,6 +30,20 @@
         <div class="swiper-custom-prev"><a href="#">Back</a></div>
         <div class="swiper-custom-next"><a href="#">Next</a></div>
     </div>
+
+    <div class="featured-posts rounded">
+        <div class="row">
+             <div *ngFor="let feature of data.posts" class="feature-post col-sm-3">
+                 <span class="title"><span>{{ feature.title }}</span></span>
+                 <a routerLink="{{ feature.seo }}">
+                     <div class="image-container rounded">
+                         <img class="img-fluid" src="{{ feature.image.url }}" alt="{{ feature.image.alt }}" />
+                         <div class="screen"></div>
+                    </div>
+                 </a>
+             </div>
+        </div>
+    </div>
 </div>
 
 

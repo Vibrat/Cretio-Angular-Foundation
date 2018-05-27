@@ -1,28 +1,35 @@
 /* Portfolio section */
-.square {
-  height: 250px;
+.square.porfolio {
+  height: 226px;
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-color: white;
+  margin: 12px 0;
+  z-index: 1;
+  -webkit-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  -moz-box-shadow: 0 4px 14px rgba(0,0,0,.36);
+  box-shadow: 0 4px 10px rgba(0,0,0,.36);
 }
 
 .header-portfolio {
-  font-size: 14px;
-  position: relative;
-  margin: 5px auto 11px auto;
+  font-size: 32px;
+  padding-top:0;
+  padding-bottom: 0;
+  color: #007bff;
+  font-family: 'Baloo Paaji', cursive;
 }
 
 .swiper-wrapper.custom {
-  height: 208px;
+  height: 165px;
 }
 
 .image-container {
   min-height: 100%;
 }
 .image-container .img-fluid {
-  min-height: 100%;
-  min-width: 100%;
-  max-width: 120%;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -34,9 +41,4 @@
 .blue-color {
   background-color: #5aa8fb;
   color: white;
-}
-
-.yellow-color {
-  background-color: #FFD64E;
-  color: #212529;
 }

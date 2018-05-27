@@ -12,9 +12,7 @@ export class PostsComponent implements OnInit, AfterViewInit {
 
   @ViewChildren('watching') things: QueryList<any>;
 
-  constructor(
-      private api: ApiService
-  ) { }
+  constructor( private api: ApiService ) { }
 
   showData(): void {
       this.api.getData(this.data.url).subscribe((data: any) => {
@@ -23,12 +21,12 @@ export class PostsComponent implements OnInit, AfterViewInit {
   }
 
   renderJs(): void {
-      let postsSwiper = new Swiper('.' + this.data.swiperContainer, {
+      new Swiper('.' + this.data.swiperContainer, {
           slidesPerView: 1,
           spaceBetween: 1000,
           slidesOffsetBefore: 0,
           preloadImages: true,
-          paginationType: 'fraction',
+          paginationType: 'bullets',
           pagination: '.swiper-pagination',
           paginationClickable: true,
           nextButton: '.swiper-custom-next',

@@ -4,32 +4,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { SwiperModule } from 'angular2-useful-swiper';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
-import { AppRoutingModule } from './app-routing.module';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
-import { MainContentComponent } from './main-content/main-content.component';
-import { RightSectionComponent } from './right-section/right-section.component';
-
-import { BlogComponent } from './components/blog/blog.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { MainWelcomeComponent } from './components/main-welcome/main-welcome.component';
-import { LogosComponent } from './components/logos/logos.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MainContentModule } from './main-content/main-content.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
-    BlogComponent,
-    ContactFormComponent,
-    MainContentComponent,
-    RightSectionComponent,
-    PortfolioComponent,
-    MainWelcomeComponent,
-    LogosComponent,
     PageNotFoundComponent,
   ],
   imports: [
@@ -37,6 +24,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AppRoutingModule,
     SwiperModule,
     HttpClientModule,
+    MainContentModule,
+    FormsModule,
+    ReactiveFormsModule
     /**
      * The HttpClientInMemoryWebApiModule module intercepts HTTP requests
      * and returns simulated server responses.

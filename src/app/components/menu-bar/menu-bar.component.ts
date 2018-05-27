@@ -1,7 +1,7 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Datas, Logo } from './data/menu-data';
 import { ContactForm, FollowUs, ContactUs } from './data/contact-form';
-import {style} from '@angular/animations';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -16,7 +16,13 @@ export class MenuBarComponent implements OnInit, AfterViewInit {
   FollowUs = FollowUs;
   ContactUs = ContactUs;
 
-  constructor() { }
+  constructor( private api: ApiService ) { }
+
+  showData(): void {
+      this.api.getData('https://hilapy-be.herokuapp.com/menus?offset=1&limit=3').subscribe((data: any) => {
+            // this.datas = data['data']
+      });
+  }
 
   ngAfterViewInit() {
       /**
@@ -37,7 +43,7 @@ export class MenuBarComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
+      this.showData();
   }
 
 }

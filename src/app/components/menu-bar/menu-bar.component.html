@@ -28,7 +28,7 @@
     </ul>
     <ul  id="menu-bar--toggle" class="menu-bar--horizontal collapse">
         <li *ngFor="let data of datas; let last = last;">
-            <a [class.last]="last" routerLink="{{ data.url }}">{{ data.name }}</a>
+            <a [class.last]="last" href="{{ data.url }}">{{ data.name }}</a>
         </li>
         <li class="contact more-space">
             <div><h4>{{ ContactUs.text_contact }}</h4></div>

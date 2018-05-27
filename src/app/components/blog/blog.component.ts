@@ -6,7 +6,6 @@ import { ApiService } from '../../api.service';
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
-  providers: [ ApiService ],
 })
 
 export class BlogComponent implements OnInit, AfterViewInit {
@@ -34,12 +33,13 @@ export class BlogComponent implements OnInit, AfterViewInit {
    * This function trigger after ngFor finish creating DOM
    */
   renderedJs(): void{
-      let swiperNews = new Swiper('.' + this.data.swiperContainer);
+      new Swiper('.' + this.data.swiperContainer, {
+          spaceBetween: 12,
+      });
       let loaders = Array.from(document.getElementsByClassName('-loading'));
       loaders.forEach((loader, index) => {
           (<HTMLElement> loader).classList.add('-disappear');
       });
-      console.log ('@ViewChildren Callback function');
   }
 
   ngAfterViewInit() {

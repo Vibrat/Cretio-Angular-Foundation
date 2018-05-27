@@ -2,15 +2,16 @@
 @import '~sass/mixins';
 
 .menu-bar {
-    background-color: $white-smoke;
-    width: 100px;
+    background-color: #0079c8;
+    width: 80px;
     z-index: 1;
+    box-shadow: 2px 0 3px rgba(0,0,0, 0.15);
 }
 
 /* Rendering menu when in mobile */
 @media screen and (max-width: 767px) {
     .menu-bar {
-      background-color: $blue-sky;
+      background-color: #0079c8;
     }
     .menu-bar.menu-bar-fixed-top {
         top: 0;

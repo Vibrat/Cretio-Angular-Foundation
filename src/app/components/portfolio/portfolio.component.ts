@@ -29,11 +29,10 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
         let porfolios = new Swiper('.' + this.data.swiperContainer, {
             slidesPerView: 1,
             spaceBetween: 11,
-            width: 300,
+            width: 280,
             slidesOffsetBefore: 11,
             preloadImages: true,
         });
-        console.log('watiching oke');
     }
 
     ngAfterViewInit(data = this.data) {

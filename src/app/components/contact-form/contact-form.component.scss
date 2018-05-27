@@ -7,6 +7,11 @@
     margin-top: 0;
     margin-bottom:0;
     height: calc(100vh - 500px);
+    background-color: white;
+    -webkit-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
+    -moz-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
+    box-shadow: 0 -4px 10px rgba(0,0,0,.36);
+    z-index: 1;
 }
 
 .needs-validation {
@@ -51,6 +56,13 @@ input.form-control {
     color: $blue-dark;
 }
 
+.valid-feedback, .invalid-feedback {
+    display: inline-block;
+    opacity: 0;
+    animation: appear-feedback 500ms forwards;
+    animation-delay: 3s;
+}
+
 @media screen and (max-width: 768px) {
     .contact-section {
         list-style: none;
@@ -59,4 +71,10 @@ input.form-control {
         margin-bottom:0;
         height: auto;
     }
+}
+
+@keyframes appear-feedback {
+  0% { opacity: 0; }
+  50% {opacity: 0.5; }
+  100% {opacity: 1; }
 }

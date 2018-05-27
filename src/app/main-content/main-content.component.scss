@@ -2,7 +2,7 @@
 @import '~sass/mixins';
 
 .app-container {
-    padding-left: 100px;
+    padding-left: 80px;
     width: 100%;
     position: absolute;
 }
@@ -64,13 +64,14 @@
 .right-section {
     padding-left: 0;
     padding-right: 0;
+    background-color: $white-smoke;
 }
 
 @media screen and (max-width: 767px) {
     .app-container {
         padding-left: 0;
         position: relative;
-        margin-top: 51px;
+        padding-top: 51px;
         width: 100vw;
     }
 
