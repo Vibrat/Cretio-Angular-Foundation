@@ -13,11 +13,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AppRoutingModule } from './app-routing.module';
 import { MainContentModule } from './main-content/main-content.module';
 
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     PageNotFoundComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
