@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 const routes: Routes = [
     { path: '', component: MainContentComponent },
     { path: 'post', loadChildren: 'app/components/posts/posts.module#PostsModule', canLoad: []  },
+    { path: 'about-us', loadChildren: 'app/components/profile/profile.module#ProfileModule' },
     { path: '**', component: PageNotFoundComponent }
 ];
 
