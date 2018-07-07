@@ -1,46 +1,12 @@
-<div class="below-supportive {{ swiperContainers.logos }}">
+<div class="below-supportive {{ cf.SwiperContainer.name }}">
   <div class="swiper-wrapper">
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
-    </div>
-    <div class="swiper-slide box-effect">
-      <div class="image-container">
-      <img width="150" class="img-fluid" alt="Angular Logo" src="../../../assets/image/logo-2.png">
-      </div>
-      <div class="header-portfolio text-center">Company Name</div>
+    <div *ngFor="let item of data" class="swiper-slide box-effect">
+      <a href="item.url">
+        <div class="image-container">
+        <img class="img-fluid" alt="{{ item.name }}" src="{{ item.image }}">
+        </div>
+        <div class="header-portfolio text-center">{{ item.name }}</div>
+      </a>
     </div>
   </div>
 </div>

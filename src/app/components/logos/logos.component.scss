@@ -3,10 +3,20 @@
 .below-supportive {
   width: 100%;
   overflow: hidden;
-  background-color: #3448a4;
-  height: calc(100vh - 75vh);
-  min-height: 120px;
-  color: #ffffff;
+  background-color: $white-pale;
+  height: calc(100vh - 500px);
+  min-height: 162px;
+  color: $dark-bold;
+  @media screen and (max-width: $media-sm) {
+      .below-supportive {
+        width: 100%;
+        overflow: hidden;
+        background-color: $white-pale;
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 10px;
+      }
+  }
 }
 
 .blue-color {
@@ -61,36 +71,26 @@
   margin-top:auto;
   margin-bottom: auto;
   height: 148px;
-  -webkit-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
-  -moz-box-shadow: 0 -4px 14px rgba(0,0,0,.36);
-  box-shadow: 0 -4px 10px rgba(0,0,0,.36);
+  width: 120px;
+  margin-left: 12px;
+  border-radius: 8px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .image-container {
   height: 116px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 4px;
-  padding-left: 4px;
+  padding: 10px 0;
   position: relative;
-}
 
-.image-container > img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-@media screen and (max-width: 768px) {
-  .below-supportive {
-    width: 100%;
-    overflow: hidden;
-    background-color: #3448a4;
-    height: auto;
-    padding-top: 5px;
-    padding-bottom: 10px;
+  img {
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 

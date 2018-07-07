@@ -1,28 +1,18 @@
 <div class="app-container">
-    <div class="{{ data.swiperContainer }}">
+    <div ngClass="{{ cf.Config.swiperName }} swiper-post" >
         <div class="swiper-wrapper">
-            <div #watching *ngFor="let post of data.posts" class="swiper-slide rounded">
-                <div class="image-container">
-                    <a routerLink="{{ post.seo }}">
-                        <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.image.alt }}" />
-                        <div class="screen"></div>
-                    </a>
-                </div>
-                <div class="section-text align-bottom hover">
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-6">
-                            <div class="title">
-                                <span>{{ post.title }}</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-xs-6">
-                            <div class="additional">
-                                <span><span class="category">{{ post.category }}</span> / {{ post.date | date: ' dd - MM - yyyy' }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <app-swiper-slider
+                   *ngFor="let post of data"
+                   #watching ngClass="swiper-slide"
+                   [post]="post"
+           ></app-swiper-slider>
+           <app-swiper-slider
+                    [hidden]="true"
+                    #watching ngClass="swiper-slide"
+                    [lazyData]="lazyData"
+                    (eleRef)="setTemplate($event)"
+           ></app-swiper-slider>
+
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
@@ -33,7 +23,7 @@
 
     <div class="featured-posts rounded">
         <div class="row">
-             <div *ngFor="let feature of data.posts" class="feature-post col-sm-3">
+             <div *ngFor="let feature of data" class="feature-post col-sm-3">
                  <span class="title"><span>{{ feature.title }}</span></span>
                  <a routerLink="{{ feature.seo }}">
                      <div class="image-container rounded">

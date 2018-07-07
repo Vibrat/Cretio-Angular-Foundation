@@ -5,6 +5,7 @@ import { MainWelcomeComponent } from '../components/main-welcome/main-welcome.co
 import { LogosComponent } from '../components/logos/logos.component';
 import { RightSectionModule } from '../right-section/right-section.module';
 import { MainContentComponent } from './main-content.component';
+import { PipesModule } from '../core/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MainContentComponent } from './main-content.component';
   imports: [
       CommonModule,
       RightSectionModule,
+      PipesModule,
   ],
   exports: [ ]
 })

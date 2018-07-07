@@ -224,16 +224,16 @@
                     id="xs-classes-links"
                 >
                     <li class="link">
-                        <a href="classes/Data-3.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-3.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data-2.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-2.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data-1.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-1.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
                         <a href="classes/InMemoryDataService.html" data-type="entity-link">InMemoryDataService</a>
@@ -541,16 +541,16 @@
                     id="classes-links"
 >
                     <li class="link">
-                        <a href="classes/Data-3.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-3.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data-2.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-2.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data-1.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data-1.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
-                        <a href="classes/Data.html" data-type="entity-link">Data</a>
+                        <a href="classes/Data.html" data-type="entity-link">PorfoliosLanguage</a>
                     </li>
                     <li class="link">
                         <a href="classes/InMemoryDataService.html" data-type="entity-link">InMemoryDataService</a>
@@ -1023,7 +1023,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new Data(&#x27;https://hilapy-be.herokuapp.com/posts?offset&#x3D;1&amp;limit&#x3D;6&#x27;, &#x27;swiper-post&#x27; )</code>
+                            <i>Default value : </i><code>new PorfoliosLanguage(&#x27;https://hilapy-be.herokuapp.com/posts?offset&#x3D;1&amp;limit&#x3D;6&#x27;, &#x27;swiper-post&#x27; )</code>
                         </td>
                     </tr>
                         <tr>
@@ -1082,7 +1082,7 @@
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, ViewChildren, QueryList, AfterViewInit} from &#x27;@angular/core&#x27;;
 import { ApiService} from &#x27;../../api.service&#x27;;
-import { Data } from &#x27;./data/posts&#x27;;
+import { PorfoliosLanguage } from &#x27;./data/posts&#x27;;
 
 @Component({
   selector: &#x27;app-posts&#x27;,
@@ -1090,7 +1090,7 @@ import { Data } from &#x27;./data/posts&#x27;;
   styleUrls: [&#x27;./posts.component.scss&#x27;]
 })
 export class PostsComponent implements OnInit, AfterViewInit {
-  public data &#x3D; new Data(&#x27;https://hilapy-be.herokuapp.com/posts?offset&#x3D;1&amp;limit&#x3D;6&#x27;, &#x27;swiper-post&#x27; );
+  public data &#x3D; new PorfoliosLanguage(&#x27;https://hilapy-be.herokuapp.com/posts?offset&#x3D;1&amp;limit&#x3D;6&#x27;, &#x27;swiper-post&#x27; );
 
   @ViewChildren(&#x27;watching&#x27;) things: QueryList&lt;any&gt;;
 

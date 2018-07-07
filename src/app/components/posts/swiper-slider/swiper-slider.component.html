@@ -1,0 +1,22 @@
+<div *ngIf="onLoadMore || post" class="rounded">
+  <div class="image-container">
+    <a [routerLink]="post.seo[0]">
+      <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.image.alt }}" />
+      <div class="screen"></div>
+    </a>
+  </div>
+  <div class="section-text align-bottom hover">
+    <div class="row">
+      <div class="col-sm-12 col-xs-6">
+        <div class="title">
+          <a routerLink="{{ post.seo }}"> <span>{{ post.title }}</span> </a>
+        </div>
+      </div>
+      <div class="col-sm-12 col-xs-6">
+        <div class="additional">
+          <span><span class="category">{{ post.category }}</span> / {{ post.date | date: ' dd - MM - yyyy' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

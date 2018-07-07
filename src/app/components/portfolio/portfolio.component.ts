@@ -1,6 +1,11 @@
-import { AfterViewInit, Component, OnInit, ViewChildren, QueryList} from '@angular/core';
-import {ApiService} from '../../api.service';
-import {Data, Portfolio} from './data/data';
+import { AfterViewInit, Component, OnInit, ViewChildren, QueryList, Inject} from '@angular/core';
+import { ApiService } from '../../api.service';
+
+// languages, interface and config
+import * as la from './data/porfolios.language';
+import * as itf from './data/porfolios.interface';
+import * as cf from './data/porfolios.config';
+
 
 @Component({
   selector: 'app-portfolio',
@@ -9,24 +14,25 @@ import {Data, Portfolio} from './data/data';
 })
 
 export class PortfolioComponent implements OnInit, AfterViewInit {
-    public  data = new Data('https://hilapy-be.herokuapp.com/posts', 'swiper-container-port');
+    public cf = cf;
+    public data: itf.Portfolio[];
 
     @ViewChildren('watching') things: QueryList<any>;
 
     constructor(
+        @Inject('endpoints')  private endpoints,
         private apiService: ApiService
     ){ }
 
     showData(): void {
-        this.apiService.getData(this.data.url)
-            .subscribe((data: Portfolio[]) => {
-                this.data.porfolios = data['data'];
-                this.data.meta = data['meta'];
+        this.apiService.getData(this.endpoints.getPorfolios)
+            .subscribe((res: itf.Response) => {
+                (res.meta.code == 200) ? this.data = res.data : console.log ('api response error, not having data');
             });
     }
 
     renderedJs(): void {
-        let porfolios = new Swiper('.' + this.data.swiperContainer, {
+        const porfolios = new Swiper('.' + cf.swiper.name, {
             slidesPerView: 1,
             spaceBetween: 11,
             width: 280,
@@ -44,4 +50,5 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.showData();
     }
+
 }

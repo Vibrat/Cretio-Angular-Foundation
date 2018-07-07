@@ -4,13 +4,14 @@ import { PostsRouterModule } from './posts-router.module';
 
 import { PostsComponent } from './posts.component';
 import { PostComponent } from '../post/post.component';
+import { SwiperSliderComponent } from './swiper-slider/swiper-slider.component';
 
 @NgModule({
   imports: [
     CommonModule,
     PostsRouterModule
   ],
-  declarations: [ PostsComponent, PostComponent ],
+  declarations: [ PostsComponent, PostComponent, SwiperSliderComponent ],
 })
 
 export class PostsModule { }

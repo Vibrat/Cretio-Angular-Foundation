@@ -1,3 +1,3 @@
 export const SwiperContainer = {
-    logos: 'swiper-container-logos'
+    name: 'swiper-container'
 };

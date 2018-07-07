@@ -1,10 +1,12 @@
-export class Data {
-    public blogs: object;
-    public meta: object;
-    constructor( public url: string, public swiperContainer: string ){}
+export interface Response {
+    meta: {
+        code: number;
+        message: 'string';
+    };
+    data: Data[];
 }
 
-export interface Blogs {
+export interface Data {
     image: {
         url: string;
         alt: string;
@@ -19,9 +21,11 @@ export interface Blogs {
     title: string;
     author: string;
     content: string;
-    seo: string;
+    seo: string[],
     hidden: boolean;
+    category: string | number;
     date: string;
-    comments: object;
+    comments: any[];
+    order: number;
     __v: number;
 }

@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 import { SwiperModule } from 'angular2-useful-swiper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from './core/pipes/pipes.module';
 
-
+import { Endpoints } from './core/endpoints/endpoints.component';
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -26,19 +25,12 @@ import { MainContentModule } from './main-content/main-content.module';
     HttpClientModule,
     MainContentModule,
     FormsModule,
-    ReactiveFormsModule
-    /**
-     * The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-     * and returns simulated server responses.
-     * Remove it when a real server is ready to receive requests.
-     */
-    /*
-    HttpClientInMemoryWebApiModule.forRoot(
-          InMemoryDataService, { dataEncapsulation: false }
-    )
-    */
+    ReactiveFormsModule,
+    PipesModule,
   ],
-  providers: [],
+  providers: [
+      { provide: 'endpoints', useClass: Endpoints}
+  ],
   bootstrap: [AppComponent]
 })
 

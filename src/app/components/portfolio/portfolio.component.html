@@ -1,10 +1,10 @@
 <div class="square porfolio">
       <div class="header header-portfolio">Porfolio</div>
-      <div class="square {{ data.swiperContainer }}">
+      <div class="square {{ cf.swiper.name }}">
         <div class="swiper-wrapper custom">
-          <div #watching *ngFor="let news of data.porfolios" class="swiper-slide box-effect rounded">
+          <div #watching *ngFor="let item of data" class="swiper-slide box-effect rounded">
             <div class="image-container">
-              <img class="img-fluid" src="http://hilapy-be.herokuapp.com/images/post_image.jpg" alt="{{ news.image.alt }}" />
+              <a [href]="item.url"><img class="img-fluid" src="{{ item.image}}" alt="{{ item.name }}" /></a>
               <div class="screen"></div>
             </div>
           </div>

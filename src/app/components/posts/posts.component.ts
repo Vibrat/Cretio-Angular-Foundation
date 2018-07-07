@@ -1,27 +1,49 @@
-import {Component, OnInit, ViewChildren, QueryList, AfterViewInit} from '@angular/core';
+import {Component, OnInit, ViewChildren, QueryList, AfterViewInit, Inject, OnChanges, SimpleChanges} from '@angular/core';
 import { ApiService} from '../../api.service';
-import { Data } from './data/posts';
+
+
+// languages, config & interface
+import * as itf from './data/posts.interface';
+import * as cf from  './data/posts.config';
+
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent implements OnInit, AfterViewInit {
-  public data = new Data('https://hilapy-be.herokuapp.com/posts?offset=1&limit=6', 'swiper-post' );
+export class PostsComponent implements OnInit, AfterViewInit, OnChanges {
+  // language and config
+  public cf = cf;
+
+  public data: itf.Data[];
+  public lazyData: itf.Data[];
+  public swiper: Swiper;
+
+  // Pagination config
+  public offset: number = 1;
+  public limit: number = 2;
 
   @ViewChildren('watching') things: QueryList<any>;
 
-  constructor( private api: ApiService ) { }
+  constructor(
+      @Inject ('endpoints') private endpoints,
+      private api: ApiService ) { }
+
+  ngAfterViewInit() { this.things.changes.subscribe(() => this.renderJs()); }
+
+  ngOnInit() { this.showData(); }
+
+  ngOnChanges(changes: SimpleChanges) {
+      console.log (changes);
+  }
 
   showData(): void {
-      this.api.getData(this.data.url).subscribe((data: any) => {
-          this.data.posts = data['data'];
-      });
+      this.api.getData(this.endpoints.getPosts + '?limit=2&offser=1').subscribe((res: itf.Response) => { this.data = res.data });
   }
 
   renderJs(): void {
-      new Swiper('.' + this.data.swiperContainer, {
+      this.swiper = new Swiper('.' + cf.Config.swiperName, {
           slidesPerView: 1,
           spaceBetween: 1000,
           slidesOffsetBefore: 0,
@@ -31,14 +53,24 @@ export class PostsComponent implements OnInit, AfterViewInit {
           paginationClickable: true,
           nextButton: '.swiper-custom-next',
           prevButton: '.swiper-custom-prev',
+          onReachEnd: () => this.loadMore()
       });
   }
 
-  ngAfterViewInit() {
-      this.things.changes.subscribe(() => this.renderJs());
+  private loadMore() {
+      // Setting Pagination here
+      ++this.offset;
+      this.api.getData('https://hilapy-be.herokuapp.com/posts?limit=2&offset=' + this.offset)
+          .subscribe((res)=> {
+              if (res.meta.code != 200 || !res.data.length) return;
+              this.lazyData = res.data;
+      });
+
+      this.swiper.slideTo(2, 300, false)
   }
 
-  ngOnInit() {
-    this.showData();
+  setTemplate(event) {
+      console.log(event);
   }
 }
+

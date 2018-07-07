@@ -1,0 +1,24 @@
+@import '~sass/variables';
+
+@mixin pale-border() {
+    border: 1px solid $white-line;
+    box-sizing: border-box; // this keep border inside a div to prevent size expansion
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@mixin table () {
+    display: table;
+}
+
+@mixin table-cell () {
+    display: table-cell;
+}
+
+@mixin table-cell-align-center() {
+    text-align: center;
+}
+
+@mixin table-cell-align-middle() {
+  vertical-align: middle;
+}

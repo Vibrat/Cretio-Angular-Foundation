@@ -18,8 +18,23 @@
   color: #212529;
 }
 
-.section-text {
-  padding: 15px;
+.swiper-slide {
+  .section-text {
+   @include table;
+   width: 100%;
+   height: 100%;
+    .container {
+      @include table-cell;
+      @include table-cell-align-middle;
+      @include table-cell-align-center;
+      .title {
+        display: inline-block;
+        top: auto;
+        position: relative;
+      }
+    }
+  }
+
 }
 
 .square {
@@ -128,7 +143,7 @@
 
 .word span:nth-child(1).active {
   animation: balance 1.5s ease-out;
-  transform-origin: 0% 100% 0px;
+  transform-origin: 0 100% 0;
 }
 
 @keyframes balance {
@@ -221,78 +236,66 @@
 
 /* appear effect */
 .container {
-  width: 400px;
-  height: 220px;
   position: relative;
   font-family: 'Baloo Paaji', cursive;
-}
 
-@media screen and (max-width: 767px) {
-  .container {
-    margin: auto;
-    position: absolute;
+  > div  {
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+
+  > div > div {
+    width: 100%;
+    float: left;
+    color: $white-smoke;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  > div > div.active {
+    animation-name: titleAnimation;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+  }
+
+  > .title:last-child > div.active {
+    animation-name: titleAnimationEnd;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+  }
+
+  > div > div {
+    animation-delay: 0.6s;
+    -webkit-animation-fill-mode: forwards;
+  }
+  > div > div:first-child {
+    animation-delay: 0.7s;
+  }
+  > div > div:last-child {
+    color: $yellow-light;
+    animation-delay: 0.5s;
+  }
+
+  > div {
     top: 0;
-    bottom:0;
-    left:0;
-    right: 0;
+    position: absolute;
+  }
+  > div > div {
+    animation-delay: 4.1s;
+    -webkit-animation-fill-mode: forwards;
+  }
+  > div > div:first-child {
+    animation-delay: 4.2s;
+  }
+  > div > div:last-child {
+    color: $yellow-light;
+    animation-delay: 4s;
   }
 }
 
-h1, h2 {
-  font-size: 50px;
-  text-transform: uppercase;
-}
-
-h1 span, h2 span {
-  width: 100%;
-  float: left;
-  color: $white-smoke;
-  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-  transform: translateY(-50px);
-  opacity: 0;
-}
-
-h1 span.active, h2 span.active {
-  animation-name: titleAnimation;
-  animation-timing-function: ease;
-  animation-duration: 3s;
-}
-
-.container > .title:last-child > span.active {
-  animation-name: titleAnimationEnd;
-  animation-timing-function: ease;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-}
-
-h1 span {
-  animation-delay: 0.6s;
-  -webkit-animation-fill-mode: forwards;
-}
-h1 span:first-child {
-  animation-delay: 0.7s;
-}
-h1 span:last-child {
-  color: $yellow-light;
-  animation-delay: 0.5s;
-}
-
-h2 {
-  top: 0;
-  position: absolute;
-}
-h2 span {
-  animation-delay: 4.1s;
-  -webkit-animation-fill-mode: forwards;
-}
-h2 span:first-child {
-  animation-delay: 4.2s;
-}
-h2 span:last-child {
-  color: $yellow-light;
-  animation-delay: 4s;
-}
 
 @keyframes titleAnimation {
   0% {
@@ -318,6 +321,17 @@ h2 span:last-child {
     opacity: 0;
     -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
     clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: auto;
+    top: 0;
+    bottom:0;
+    left:0;
+    right: 0;
   }
 }
 

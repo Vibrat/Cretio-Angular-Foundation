@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { BlogComponent } from '../components/blog/blog.component';
 import { PortfolioComponent  } from '../components/portfolio/portfolio.component';
 import { RightSectionComponent } from './right-section.component';
@@ -13,7 +13,8 @@ import  { ContactFormModule } from '../components/contact-form/contact-form.modu
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ContactFormModule
+    ContactFormModule,
+     RouterModule,
   ],
   declarations: [ BlogComponent, PortfolioComponent, RightSectionComponent ],
   exports: [ RightSectionComponent ]
